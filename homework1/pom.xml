@@ -129,7 +129,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
-                                com.epam.spb.chr.courses.java.fundamentals.feb.oop.MainClass
+                                com.epam.java.core.task1.Main
                             </mainClass>
                         </manifest>
                     </archive>
