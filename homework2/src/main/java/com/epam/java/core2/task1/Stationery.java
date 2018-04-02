@@ -1,8 +1,11 @@
 package com.epam.java.core2.task1;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Stationery {
+public class Stationery implements Comparable<Stationery> {
 
     private int price;
     private String title;
@@ -61,5 +64,18 @@ public class Stationery {
                 ", title='" + getTitle() + '\'' +
                 ", manufactured='" + getManufactured() + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(@NotNull Stationery o) {
+        return this.getPrice() - o.getPrice();
+    }
+
+    public static class TitleComparator implements Comparator<Stationery> {
+
+        @Override
+        public int compare(Stationery o1, Stationery o2) {
+            return o1.getTitle().compareTo(o2.getTitle());
+        }
     }
 }
