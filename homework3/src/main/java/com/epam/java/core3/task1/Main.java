@@ -1,6 +1,6 @@
 package com.epam.java.core3.task1;
 
-import java.util.TreeMap;
+import com.epam.java.core3.task1.CrazyLogger;
 
 public class Main {
 
