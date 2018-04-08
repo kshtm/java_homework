@@ -1,8 +1,6 @@
 package com.epam.java.core4.task1;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -46,7 +44,7 @@ public class JavaCodeReader {
         this.filePath = filePath;
     }
 
-    public Map<String, Integer> countKeywords() {
+    public Map<String, Integer> countKeywordsBytes() {
         File file = new File(filePath);
         if (!file.isFile() || !file.exists()) {
             throw new IllegalArgumentException("There is no such file");
@@ -55,6 +53,20 @@ public class JavaCodeReader {
             byte[] bytesArray = new byte[(int)file.length()];
             stream.read(bytesArray);
             return readData(new String(bytesArray));
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
+    }
+
+    public Map<String, Integer> countKeywordsChars() {
+        File file = new File(filePath);
+        if (!file.isFile() || !file.exists()) {
+            throw new IllegalArgumentException("There is no such file");
+        }
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            StringBuilder builder = new StringBuilder();
+            reader.lines().forEach(line -> builder.append(line).append("\n"));
+            return readData(builder.toString());
         } catch (IOException e) {
             throw new IllegalArgumentException(e.getMessage());
         }
