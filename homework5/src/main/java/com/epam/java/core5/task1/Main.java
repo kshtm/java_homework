@@ -1,5 +1,7 @@
 package com.epam.java.core5.task1;
 
+import com.epam.java.core5.task1.FileManager;
+
 public class Main {
 
     public static void main(String[] args) {
