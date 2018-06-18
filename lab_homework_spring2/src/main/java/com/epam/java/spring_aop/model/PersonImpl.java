@@ -1,11 +1,11 @@
-package com.epam.java.spring1;
+package com.epam.java.spring_aop.model;
 
-import lombok.AccessLevel;
+import com.epam.java.spring_aop.model.Contact;
+import com.epam.java.spring_aop.model.Country;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Singular;
 import lombok.Value;
-import lombok.experimental.FieldDefaults;
 import lombok.experimental.Wither;
 import org.springframework.stereotype.Component;
 
